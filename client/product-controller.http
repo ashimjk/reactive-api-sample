@@ -1,0 +1,48 @@
+### Get All Products
+
+GET http://localhost:8080/controller/products
+Accept: application/json
+
+### Create Product
+
+POST http://localhost:8080/controller/products
+Content-Type: application/json
+
+{
+  "name": "Black Tea",
+  "price": 3.44
+}
+
+> {% client.global.set("reference", response.body.id); %}
+
+### Get Product By Id
+
+GET http://localhost:8080/controller/products/{{ reference }}
+Accept: application/json
+
+### Update Product
+
+PUT http://localhost:8080/controller/products/{{ reference }}
+Content-Type: application/json
+
+{
+  "name": "Black Tea",
+  "price": 44.33
+}
+
+### Delete Product By Id
+
+DELETE http://localhost:8080/controller/products/{{ reference }}
+Accept: application/json
+
+### Delete All Product
+
+DELETE http://localhost:8080/controller/products
+Accept: application/json
+
+### List Events
+
+GET http://localhost:8080/controller/products/events
+Accept: text/event-stream
+
+###
